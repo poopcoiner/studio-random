@@ -1,0 +1,73 @@
+Studio Random — PRD (“Dark Elegance”, concise)
+=============================================
+
+1 · GOAL
+--------
+Ship a single-page-scroll marketing site that:
+  • States who we are and what we deliver.
+  • Shows recent work.
+  • Offers two contact paths (Email + Telegram).
+Dark theme, crisp type, subtle motion—no gimmicks.
+
+2 · STACK
+---------
+Next.js 14 • Tailwind CSS • Framer Motion • MDX content • Vercel • Plausible
+
+3 · PAGE STRUCTURE
+------------------
+/               – Home  
+/work           – Portfolio  
+/services       – Our pillars  
+/about          – Team & ethos  
+/contact        – Email + Telegram  
+/legal          – T&Cs  
+
+Header links (mono): 00 Work  01 Services  02 About  03 Contact
+
+4 · COPY
+--------
+HERO  
+    DESIGN SHARP. CODE FAST. LAUNCH LOUD.  
+    We design the look, write the smart contracts, run the launch, and connect capital—one sprint from idea to mainnet.
+
+WHAT WE DO (cards)  
+    Design           – Names, logos, UI/UX + original character/meme art.            • 48 h Figma → code  
+    Engineering      – Gas‑efficient ERC‑20/SPL, bots, audits, APIs.                 • 0 critical exploits  
+    Launch           – Liquidity, listings, community & comms playbooks.             • 30 min to trending  
+    Capital/Network  – Pre‑seed tickets and intros to launchpads & market‑makers.    • 25+ partner routes  
+
+MINI‑MANIFESTO  
+  • Momentum rewards finished products.  
+  • Clarity compounds faster than hype.  
+  • Ship, measure, iterate.
+
+ABOUT (120 words)  
+  Studio Random began as a two‑person skunk‑works helping friends launch tokens that actually worked. Today we’re a distributed crew of designers, chain engineers and growth tacticians. We partner as hidden co‑founders—putting skin in the game alongside code—so founders move from spark to mainnet before the window closes.
+
+CONTACT TAGLINE  
+    Talk is cheap. Shipping isn’t. Ping us—reply in < 24 h.
+
+5 · DESIGN TOKENS
+-----------------
+BG  #0F0F0F • TEXT #F5F5F5 • ACCENT #35FFBE  
+Fonts  Plus Jakarta Sans (display) • Söhne Mono (nav) • Inter (body)  
+Motion budget ≤ 140 kB JS; disables with prefers‑reduced‑motion.
+
+6 · COMPONENTS
+--------------
+Header.tsx • Footer.tsx • Card.tsx • PortfolioGrid.tsx • (optional) AsciiCurtain.tsx
+
+7 · MOTION
+----------
+Page fade‑slide (0.4 s) on load. Card hover tilt + accent glow.
+
+8 · ACCEPTANCE
+--------------
+☑ Copy present, no lorem‑ipsum.  
+☑ Home LCP ≤ 2.5 s mobile P75.  
+☑ JS payload ≤ 140 kB gzipped.  
+☑ Email mailto:hello@studiorandom.xyz.  
+☑ Telegram link opens https://t.me/studiorandom.  
+☑ Lighthouse mobile score ≥ 90; 0 a11y errors.
+
+— END —

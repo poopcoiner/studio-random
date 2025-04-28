@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-bg text-text;
+}
+
+@layer utilities {
+  .clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  .accent-gradient {
+    @apply bg-gradient-to-r from-accent to-accent/80 text-transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+/* Responsive text handling */
+@media (max-width: 480px) {
+  .text-h1 {
+    word-break: break-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Animation utilities */
+.animate-fade-up {
+  animation: fadeUp 0.4s ease-out forwards;
+}
+
+.animate-clip-reveal {
+  animation: clipReveal 0.8s ease-out forwards;
+}
+
+/* Page transition animation */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+/* Card hover animation */
+.hover-card {
+  will-change: transform, box-shadow;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px) rotate(1deg);
+  box-shadow: 0 4px 12px rgba(53, 255, 190, 0.25);
+}
+
+/* No animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-clip-reveal,
+  .page-enter,
+  .page-enter-active,
+  .hover-card {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes clipReveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
