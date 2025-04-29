@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "STUDIO RANDOM - Dark Elegance",
-  description: "Minimal digital design studio focused on performance and aesthetics",
+  title: "STUDIO RANDOM",
+  description: "Web3 design & development studio turning ideas into mainnet reality with fast engineering, sharp designs, and high-impact launches",
   icons: {
     icon: "/studio-random-logo.svg",
   },
