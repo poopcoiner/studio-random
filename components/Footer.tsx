@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -8,8 +10,8 @@ const Footer = () => {
     <footer className="py-8 px-4 md:px-8 mt-16 border-t border-text/10">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <div className="flex items-center mb-2">
+          <div className="mb-6 md:mb-0 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start mb-2">
               <Image 
                 src="/studio-random-logo.svg"
                 alt="Studio Random Logo"
@@ -26,8 +28,8 @@ const Footer = () => {
             </p>
           </div>
           
-          <nav>
-            <ul className="flex space-x-6 font-mono text-sm">
+          <nav className="w-full md:w-auto">
+            <ul className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 font-mono text-sm">
               <li>
                 <Link href="/work" className="hover:text-accent transition-colors">
                   Work
@@ -50,6 +52,12 @@ const Footer = () => {
               </li>
             </ul>
           </nav>
+        </div>
+        
+        <div className="mt-8 pt-4 border-t border-text/5 text-center md:text-right">
+          <p className="text-xs text-text/50">
+            Built with care in Amsterdam
+          </p>
         </div>
       </div>
     </footer>
