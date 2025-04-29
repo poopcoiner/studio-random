@@ -5,12 +5,20 @@ import { notFound, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageTransition from '@/components/PageTransition';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+
+// Define the project type
+interface Project {
+  title: string;
+  content: string;
+  client: string;
+  date: string;
+  tags: string[];
+}
 
 export default function ProjectPage() {
   const pathname = usePathname();
-  const slug = pathname.split('/').pop();
-  const [project, setProject] = useState(null);
+  const slug = pathname.split('/').pop() || '';
+  const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -54,7 +62,7 @@ export default function ProjectPage() {
   }
 
   // Map slug to folder name
-  const getFolderName = (slug) => {
+  const getFolderName = (slug: string) => {
     switch(slug) {
       case 'juststeve-xyz': return 'juststeve';
       case 'moodee-dev': return 'moodee';
@@ -118,7 +126,7 @@ export default function ProjectPage() {
             <div>
               <h3 className="text-accent mb-2">Tags</h3>
               <div className="flex flex-wrap gap-2 mt-1">
-                {project.tags.map((tag) => (
+                {project.tags.map((tag: string) => (
                   <span 
                     key={tag} 
                     className="py-1 px-2 rounded-full bg-text/5 text-text/80"
