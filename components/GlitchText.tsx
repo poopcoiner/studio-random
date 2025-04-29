@@ -14,7 +14,7 @@ const GlitchText = ({
   children, 
   intensity = 1, 
   className = '', 
-  tag = 'span' 
+  tag = 'span'
 }: GlitchTextProps) => {
   const prefersReducedMotion = useReducedMotion();
   
@@ -27,6 +27,8 @@ const GlitchText = ({
     disabled: prefersReducedMotion || !textContent,
     initialGlitchDuration: 500,
     stabilizationSpeed: 100,
+    // Use monospace glitch characters to prevent size changes
+    glitchChars: '█▓▒░'
   });
   
   // If we can't get textContent or user prefers reduced motion, just render children
@@ -36,7 +38,9 @@ const GlitchText = ({
   
   return createElement(
     tag,
-    { className: `inline-block overflow-hidden break-words ${className}` },
+    { 
+      className: `${className}`,
+    },
     displayText
   );
 };

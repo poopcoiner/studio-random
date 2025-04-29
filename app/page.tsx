@@ -4,6 +4,7 @@ import GlitchText from "@/components/GlitchText";
 import PageTransition from "@/components/PageTransition";
 import { getAllProjects, Project } from "@/utils/projects";
 import Card from "@/components/Card";
+import TerminalHero from "@/components/TerminalHero";
 
 export default function Home() {
   // Get the first 3 projects for the home page
@@ -15,18 +16,7 @@ export default function Home() {
       <AsciiCurtain />
       
       {/* Hero Section */}
-      <section className="py-20 md:py-32 px-4">
-        <div className="container mx-auto">
-          <h1 className="text-h0 font-display uppercase tracking-tight mb-4">
-            <GlitchText tag="span" intensity={1.2}>
-              DESIGN SHARP. CODE FAST. LAUNCH LOUD.
-            </GlitchText>
-          </h1>
-          <p className="mt-6 text-body max-w-xl text-text/80">
-            We design the look, write the smart contracts, and run the launch—turning Web3 ideas into mainnet reality in a single sprint.
-          </p>
-        </div>
-      </section>
+      <TerminalHero />
 
       {/* What We Do Section */}
       <section className="py-16 px-4">
